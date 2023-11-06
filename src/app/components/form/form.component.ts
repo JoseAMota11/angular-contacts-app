@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   ReactiveFormsModule,
@@ -6,6 +6,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { ContactsService } from 'src/app/services/contacts.service';
+import { Contact } from 'src/app/interfaces/contacts';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -58,8 +61,17 @@ export class FormComponent {
     ]),
     phoneNumbers: new FormControl('', Validators.required),
   });
+  contactsService: ContactsService = inject(ContactsService);
+
+  constructor(private router: Router) {}
 
   onSubmit() {
-    console.log(this.form.value);
+    this.contactsService.setContact(this.form.value).then((response) => {
+      if (response.ok) {
+        this.router.navigate(['/']);
+      } else {
+        console.error('Server responded with an error');
+      }
+    });
   }
 }

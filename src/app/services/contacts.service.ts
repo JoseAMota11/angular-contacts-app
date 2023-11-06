@@ -19,19 +19,13 @@ export class ContactsService {
     return await data.json();
   }
 
-  async setContact(contact: Contact) {
-    const response = await fetch(this.URL, {
+  async setContact(contact: unknown) {
+    return await fetch(this.URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(contact),
     });
-
-    if (response.ok) {
-      console.log('Data submitted!');
-    } else {
-      console.error('Server responded with an error');
-    }
   }
 }
