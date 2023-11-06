@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   ReactiveFormsModule,
@@ -7,10 +7,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { ContactsService } from 'src/app/services/contacts.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-add-form',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   template: `
@@ -42,13 +42,13 @@ import { ActivatedRoute, Router } from '@angular/router';
             placeholder="Ex: 000-000-0000, 000-000-0000"
           ></textarea>
         </label>
-        <button type="submit">{{ buttonText }}</button>
+        <button type="submit">Add</button>
       </form>
     </section>
   `,
-  styleUrls: ['./form.component.scss'],
+  styleUrls: ['./add-form.component.scss'],
 })
-export class FormComponent implements OnInit {
+export class AddFormComponent {
   form = new FormGroup({
     firstName: new FormControl('', [
       Validators.minLength(2),
@@ -61,46 +61,16 @@ export class FormComponent implements OnInit {
     phoneNumbers: new FormControl('', Validators.required),
   });
   contactsService: ContactsService = inject(ContactsService);
-  currentRoute: ActivatedRoute = inject(ActivatedRoute);
-  buttonText: string = 'Add';
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    if (this.currentRoute.snapshot.params['id']) {
-      this.buttonText = 'Update';
-      this.contactsService
-        .getContactById(Number(this.currentRoute.snapshot.params['id']))
-        .then((response) => {
-          this.form.get('firstName')?.setValue(response?.firstName!);
-          this.form.get('lastName')?.setValue(response?.lastName!);
-          this.form.get('phoneNumbers')?.setValue(response?.phoneNumbers!);
-        });
-    }
-  }
-
   onSubmit() {
-    if (this.currentRoute.snapshot.params['id']) {
-      this.contactsService
-        .updateContact(
-          Number(this.currentRoute.snapshot.params['id']),
-          this.form.value
-        )
-        .then((response) => {
-          if (response.ok) {
-            this.router.navigate(['/']);
-          } else {
-            console.error('Server responded with an error');
-          }
-        });
-    } else {
-      this.contactsService.setContact(this.form.value).then((response) => {
-        if (response.ok) {
-          this.router.navigate(['/']);
-        } else {
-          console.error('Server responded with an error');
-        }
-      });
-    }
+    this.contactsService.setContact(this.form.value).then((response) => {
+      if (response.ok) {
+        this.router.navigate(['/']);
+      } else {
+        console.error('Server responded with an error');
+      }
+    });
   }
 }

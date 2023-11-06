@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import { FormComponent } from './components/form/form.component';
+import { AddFormComponent } from './components/add-form/add-form.component';
 import { HomeComponent } from './components/home/home.component';
+import { UpdateFormComponent } from './components/update-form/update-form.component';
 
 export const routes: Routes = [
   {
@@ -10,12 +11,12 @@ export const routes: Routes = [
   },
   {
     path: 'new-contact',
-    component: FormComponent,
+    component: AddFormComponent,
     title: 'Create a new contact',
   },
   {
     path: 'update-contact/:id',
-    component: FormComponent,
+    component: UpdateFormComponent,
     title: 'Updating contact',
   },
 ];
