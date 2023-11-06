@@ -11,7 +11,7 @@ import { Contact } from 'src/app/interfaces/contacts';
   imports: [CommonModule, ContactsComponent, RouterModule],
   template: `
     <a routerLink="new-contact" class="link">Add a new contact</a>
-    <section>
+    <section class="home-section">
       <app-contacts
         *ngFor="let contact of contactList"
         [contact]="contact"

@@ -16,18 +16,28 @@ import {
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <label for="firstName">
           First Name
-          <input formControlName="firstName" type="text" id="firstName" />
+          <input
+            formControlName="firstName"
+            type="text"
+            id="firstName"
+            placeholder="Ex: John"
+          />
         </label>
         <label for="lastName">
           Last Name
-          <input formControlName="lastName" type="text" id="lastName" />
+          <input
+            formControlName="lastName"
+            type="text"
+            id="lastName"
+            placeholder="Ex: Doe"
+          />
         </label>
         <label for="phoneNumbers">
           Phone Numbers
           <textarea
             formControlName="phoneNumbers"
             id="phoneNumbers"
-            placeholder="000-000-0000, 000-000-0000"
+            placeholder="Ex: 000-000-0000, 000-000-0000"
           ></textarea>
         </label>
         <button type="submit">Add</button>

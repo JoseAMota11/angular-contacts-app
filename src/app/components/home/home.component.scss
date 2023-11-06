@@ -7,3 +7,10 @@ $primary: #1677ff;
   font-weight: bold;
   border-radius: 4px;
 }
+
+.home-section {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  place-content: center;
+  gap: 2rem;
+}
