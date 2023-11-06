@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 import { FormComponent } from './components/form/form.component';
-import { ContactsComponent } from './components/contacts/contacts.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: ContactsComponent,
+    component: HomeComponent,
     title: 'Contacts App',
   },
   {

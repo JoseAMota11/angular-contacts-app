@@ -1,18 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Contact } from 'src/app/interfaces/contacts';
 
 @Component({
   selector: 'app-contacts',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule],
   template: `
-    <a routerLink="new-contact" class="link">Add a new contact</a>
     <section>
-      <h3></h3>
-      <p></p>
+      <h3>{{ contact.firstName }} {{ contact.lastName }}</h3>
+      <p>{{ contact.email }}</p>
     </section>
   `,
   styleUrls: ['./contacts.component.scss'],
 })
-export class ContactsComponent {}
+export class ContactsComponent {
+  @Input() contact!: Contact;
+}
