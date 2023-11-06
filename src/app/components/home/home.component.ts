@@ -26,7 +26,7 @@ export class HomeComponent {
 
   constructor() {
     this.contactsService.getAllContacts().then((response) => {
-      this.contactList = response;
+      this.contactList = response.reverse();
     });
   }
 }

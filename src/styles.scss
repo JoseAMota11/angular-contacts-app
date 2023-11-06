@@ -15,6 +15,11 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  font-weight: bold;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
 }
 
 a {
