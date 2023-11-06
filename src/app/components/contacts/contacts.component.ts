@@ -2,6 +2,7 @@ import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Contact } from 'src/app/interfaces/contacts';
 import { ContactsService } from 'src/app/services/contacts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contacts',
@@ -15,7 +16,9 @@ import { ContactsService } from 'src/app/services/contacts.service';
         <button type="button" class="card--buttons__delete" (click)="delete()">
           Delete
         </button>
-        <button type="button" class="card--buttons__edit">Edit</button>
+        <button type="button" class="card--buttons__edit" (click)="update()">
+          Edit
+        </button>
       </div>
     </section>
   `,
@@ -25,7 +28,7 @@ export class ContactsComponent {
   @Input() contact!: Contact;
   contactsService: ContactsService = inject(ContactsService);
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   delete() {
     this.contactsService.deleteContact(this.contact.id).then((response) => {
@@ -42,5 +45,9 @@ export class ContactsComponent {
         window.location.reload();
       }
     });
+  }
+
+  update() {
+    this.router.navigate(['update-contact', this.contact.id]);
   }
 }

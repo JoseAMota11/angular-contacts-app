@@ -14,7 +14,7 @@ export class ContactsService {
     return await data.json();
   }
 
-  async getContactById(id: number): Promise<Contact[] | undefined> {
+  async getContactById(id: number): Promise<Contact | undefined> {
     const data = await fetch(`${this.URL}/${id}`);
     return await data.json();
   }
@@ -35,6 +35,17 @@ export class ContactsService {
       headers: {
         'Cache-Control': 'no-cache',
       },
+    });
+  }
+
+  async updateContact(id: number, contact: unknown) {
+    return await fetch(`${this.URL}/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contact),
     });
   }
 }

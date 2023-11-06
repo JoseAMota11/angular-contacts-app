@@ -13,4 +13,9 @@ export const routes: Routes = [
     component: FormComponent,
     title: 'Create a new contact',
   },
+  {
+    path: 'update-contact/:id',
+    component: FormComponent,
+    title: 'Updating contact',
+  },
 ];

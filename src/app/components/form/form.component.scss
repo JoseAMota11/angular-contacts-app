@@ -44,10 +44,7 @@ $primary: #1677ff;
       height: 40px;
       font-weight: bold;
       font-size: 1.1rem;
-
-      &:hover {
-        filter: brightness(0.95);
-      }
+      text-transform: uppercase;
     }
   }
 }
