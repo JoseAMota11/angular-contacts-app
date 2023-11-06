@@ -22,9 +22,13 @@ import {
           Last Name
           <input formControlName="lastName" type="text" id="lastName" />
         </label>
-        <label for="email">
-          Email
-          <input formControlName="email" type="text" id="email" />
+        <label for="phoneNumbers">
+          Phone Numbers
+          <textarea
+            formControlName="phoneNumbers"
+            id="phoneNumbers"
+            placeholder="000-000-0000, 000-000-0000"
+          ></textarea>
         </label>
         <button type="submit">Add</button>
       </form>
@@ -42,7 +46,7 @@ export class FormComponent {
       Validators.minLength(2),
       Validators.required,
     ]),
-    email: new FormControl('', [Validators.email, Validators.required]),
+    phoneNumbers: new FormControl('', Validators.required),
   });
 
   onSubmit() {

@@ -25,6 +25,15 @@ $primary: #1677ff;
         text-indent: 0.5rem;
         border-color: rgba($color: #000000, $alpha: 0.1);
       }
+
+      textarea {
+        resize: vertical;
+        width: 300px;
+        min-height: 80px;
+        border-radius: 4px;
+        padding: 0.2rem 0.5rem;
+        border-color: rgba($color: #000000, $alpha: 0.1);
+      }
     }
 
     button {

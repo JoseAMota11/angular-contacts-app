@@ -9,7 +9,7 @@ import { Contact } from 'src/app/interfaces/contacts';
   template: `
     <section>
       <h3>{{ contact.firstName }} {{ contact.lastName }}</h3>
-      <p>{{ contact.email }}</p>
+      <p>{{ contact.phoneNumbers }}</p>
     </section>
   `,
   styleUrls: ['./contacts.component.scss'],
