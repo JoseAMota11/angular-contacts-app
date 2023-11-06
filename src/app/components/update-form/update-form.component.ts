@@ -42,7 +42,10 @@ import { ContactsService } from 'src/app/services/contacts.service';
             placeholder="Ex: 000-000-0000, 000-000-0000"
           ></textarea>
         </label>
-        <button type="submit">Update</button>
+        <div>
+          <button type="submit">Update</button>
+          <button type="button" (click)="cancel()">Cancel</button>
+        </div>
       </form>
     </section>
   `,
@@ -85,5 +88,9 @@ export class UpdateFormComponent implements OnInit {
           console.error('Server responded with an error');
         }
       });
+  }
+
+  cancel() {
+    this.router.navigate(['/']);
   }
 }

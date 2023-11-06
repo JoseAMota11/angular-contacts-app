@@ -1,4 +1,5 @@
 $primary: #1677ff;
+$secondary: #ff5255;
 
 .container-form {
   display: grid;
@@ -38,13 +39,26 @@ $primary: #1677ff;
       }
     }
 
-    button {
-      background-color: $primary;
-      color: whitesmoke;
-      height: 40px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-transform: uppercase;
+    div {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        width: 45%;
+        color: whitesmoke;
+        height: 40px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+      }
+
+      button[type=submit] {
+        background-color: $primary;
+      }
+      
+      button[type=button] {
+        background-color: $secondary;
+      }
     }
   }
 }
