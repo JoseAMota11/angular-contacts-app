@@ -1,17 +1,29 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { ContactsComponent } from './components/contacts/contacts.component';
+import { FormComponent } from './components/form/form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    ContactsComponent,
+    RouterModule,
+    FormComponent,
+  ],
   template: `
-    <h1>Welcome to {{ title }}!</h1>
-    <router-outlet></router-outlet>
+    <nav class="navbar">
+      <header class="navbar-header">
+        <a routerLink="/" class="navbar-header--link">Contacts App</a>
+      </header>
+    </nav>
+    <main class="container">
+      <router-outlet></router-outlet>
+    </main>
   `,
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'Contacts App';
-}
+export class AppComponent {}
