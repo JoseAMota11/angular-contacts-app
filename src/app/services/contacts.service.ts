@@ -28,4 +28,13 @@ export class ContactsService {
       body: JSON.stringify(contact),
     });
   }
+
+  async deleteContact(id: number) {
+    return await fetch(`${this.URL}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Cache-Control': 'no-cache',
+      },
+    });
+  }
 }

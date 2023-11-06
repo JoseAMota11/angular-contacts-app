@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Contact } from 'src/app/interfaces/contacts';
+import { ContactsService } from 'src/app/services/contacts.service';
 
 @Component({
   selector: 'app-contacts',
@@ -11,7 +12,9 @@ import { Contact } from 'src/app/interfaces/contacts';
       <h3>{{ contact.firstName }} {{ contact.lastName }}</h3>
       <p>{{ contact.phoneNumbers }}</p>
       <div class="contact-card--buttons">
-        <button type="button" class="card--buttons__delete">Delete</button>
+        <button type="button" class="card--buttons__delete" (click)="delete()">
+          Delete
+        </button>
         <button type="button" class="card--buttons__edit">Edit</button>
       </div>
     </section>
@@ -20,6 +23,24 @@ import { Contact } from 'src/app/interfaces/contacts';
 })
 export class ContactsComponent {
   @Input() contact!: Contact;
+  contactsService: ContactsService = inject(ContactsService);
 
   constructor() {}
+
+  delete() {
+    this.contactsService.deleteContact(this.contact.id).then((response) => {
+      if (response.ok) {
+        /* 
+          I don't know how to tell the component to refresh after
+          a contact is deleted. I don't think this is the best
+          solution but by now I'll use a window.location.reload();
+          to refresh the page.
+
+          PD: I'm a newbie to Angular :)
+        */
+
+        window.location.reload();
+      }
+    });
+  }
 }

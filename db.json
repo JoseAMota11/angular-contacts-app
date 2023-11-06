@@ -1,76 +1,64 @@
 {
   "contacts": [
     {
+      "id": 1,
       "firstName": "John",
       "lastName": "Doe",
-      "phoneNumbers": "555-123-4567, 555-012-3456",
-      "id": 1
+      "phoneNumbers": "555-123-4567, 555-012-3456"
     },
     {
+      "id": 2,
       "firstName": "Alice",
       "lastName": "Johnson",
-      "phoneNumbers": "555-890-1234",
-      "id": 2
+      "phoneNumbers": "555-890-1234"
     },
     {
+      "id": 3,
       "firstName": "Michael",
       "lastName": "Smith",
-      "phoneNumbers": "555-890-1234",
-      "id": 3
+      "phoneNumbers": "555-890-1234"
     },
     {
+      "id": 4,
       "firstName": "Emily",
       "lastName": "Brown",
-      "phoneNumbers": "555-890-1234",
-      "id": 4
+      "phoneNumbers": "555-890-1234"
     },
     {
+      "id": 5,
       "firstName": "Daniel",
       "lastName": "Davis",
-      "phoneNumbers": "555-123-4567, 555-012-3456",
-      "id": 5
+      "phoneNumbers": "555-123-4567, 555-012-3456"
     },
     {
+      "id": 6,
       "firstName": "Emma",
       "lastName": "Wilson",
-      "phoneNumbers": "555-890-1234",
-      "id": 6
+      "phoneNumbers": "555-890-1234"
     },
     {
+      "id": 7,
       "firstName": "Oliver",
       "lastName": "Martinez",
-      "phoneNumbers": "555-123-4567, 555-012-3456",
-      "id": 7
+      "phoneNumbers": "555-123-4567, 555-012-3456"
     },
     {
+      "id": 8,
       "firstName": "Sophia",
       "lastName": "Taylor",
-      "phoneNumbers": "555-890-1234",
-      "id": 8
+      "phoneNumbers": "555-890-1234"
     },
     {
+      "id": 9,
       "firstName": "Liam",
       "lastName": "Lee",
-      "phoneNumbers": "555-890-1234",
-      "id": 9
+      "phoneNumbers": "555-890-1234"
     },
     {
+      "id": 10,
       "firstName": "Ava",
       "lastName": "Garcia",
-      "phoneNumbers": "555-123-4567, 555-012-3456",
-      "id": 10
-    },
-    {
-      "firstName": "José",
-      "lastName": "Mota",
-      "phoneNumbers": "809-876-3421",
-      "id": 11
-    },
-    {
-      "firstName": "Ariel",
-      "lastName": "Matos",
-      "phoneNumbers": "384-435-3565, 493-534-5325",
-      "id": 12
+      "phoneNumbers": "555-123-4567, 555-012-3456"
     }
   ]
 }
