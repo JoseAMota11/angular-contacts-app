@@ -23,7 +23,6 @@ import { Router } from '@angular/router';
             type="text"
             id="firstName"
             placeholder="Ex: John"
-            [required]="true"
           />
         </label>
         <label for="lastName">
