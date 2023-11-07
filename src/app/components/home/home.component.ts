@@ -12,7 +12,9 @@ import { Contact } from 'src/app/interfaces/contacts';
   template: `
     <a routerLink="new-contact" class="link">Add a new contact</a>
     <section class="home-section">
+      <p *ngIf="loading" class="loading">Loading...</p>
       <app-contacts
+        #elseBlock
         *ngFor="let contact of contactList"
         [contact]="contact"
       ></app-contacts>
@@ -23,10 +25,23 @@ import { Contact } from 'src/app/interfaces/contacts';
 export class HomeComponent {
   contactList: Contact[] = [];
   contactsService: ContactsService = inject(ContactsService);
+  loading = true;
 
   constructor() {
-    this.contactsService.getAllContacts().then((response) => {
-      this.contactList = response.reverse();
-    });
+    this.contactsService
+      .getAllContacts()
+      .then((response) => {
+        localStorage.setItem('data', JSON.stringify(response.reverse()));
+        this.contactList = response.reverse();
+      })
+      .catch((_) => {
+        const dataStoredInLocalStorage = localStorage.getItem('data');
+        if (dataStoredInLocalStorage !== null) {
+          this.contactList = JSON.parse(dataStoredInLocalStorage);
+        }
+      })
+      .finally(() => {
+        this.loading = false;
+      });
   }
 }

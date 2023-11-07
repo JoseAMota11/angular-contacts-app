@@ -14,3 +14,8 @@ $primary: #1677ff;
   place-content: center;
   gap: 2rem;
 }
+
+.loading {
+  text-align: center;
+  grid-column: 2 / 3;
+}

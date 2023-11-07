@@ -1,12 +1,6 @@
 {
   "contacts": [
     {
-      "id": 2,
-      "firstName": "Alice",
-      "lastName": "Johnson",
-      "phoneNumbers": "555-890-1234"
-    },
-    {
       "id": 3,
       "firstName": "Michael",
       "lastName": "Smith",
@@ -17,12 +11,6 @@
       "firstName": "Emily",
       "lastName": "Brown",
       "phoneNumbers": "555-890-1234"
-    },
-    {
-      "id": 5,
-      "firstName": "Daniel",
-      "lastName": "Davis",
-      "phoneNumbers": "555-123-4567, 555-012-3456"
     },
     {
       "id": 6,
@@ -65,6 +53,12 @@
       "lastName": "Almonte",
       "phoneNumbers": "098-985-9643, 908-643-4255",
       "id": 13
+    },
+    {
+      "firstName": "John",
+      "lastName": "Love",
+      "phoneNumbers": "089-987-8998",
+      "id": 14
     }
   ]
 }
