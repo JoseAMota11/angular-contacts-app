@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   template: `
     <section class="contact-card">
       <h3>{{ contact.firstName }} {{ contact.lastName }}</h3>
-      <p>{{ contact.phoneNumbers }}</p>
+      <p>Tel: {{ contact.phoneNumbers }}</p>
       <div class="contact-card--buttons">
         <button type="button" class="card--buttons__delete" (click)="delete()">
           Delete
