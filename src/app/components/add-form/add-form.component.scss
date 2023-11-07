@@ -93,3 +93,8 @@ $secondary: #ff5255;
     display: unset;
   }
 }
+
+.invalid {
+  border: unset;
+  outline: 3px solid $secondary;
+}

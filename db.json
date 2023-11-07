@@ -1,12 +1,6 @@
 {
   "contacts": [
     {
-      "id": 3,
-      "firstName": "Michael",
-      "lastName": "Smith",
-      "phoneNumbers": "555-890-1234"
-    },
-    {
       "id": 4,
       "firstName": "Emily",
       "lastName": "Brown",
@@ -67,10 +61,10 @@
       "id": 15
     },
     {
-      "firstName": "José Alejandro",
-      "lastName": "Montana",
-      "phoneNumbers": "346-757-6468",
-      "id": 17
+      "firstName": "José",
+      "lastName": "Mota",
+      "phoneNumbers": "809-832-3343",
+      "id": 18
     }
   ]
 }
